@@ -11,7 +11,10 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-               // message.setText(R.string.title_home)
+
+               val menuFragment = MenuFragment()
+                menuFragment.show(supportFragmentManager, menuFragment.tag)
+                // message.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {

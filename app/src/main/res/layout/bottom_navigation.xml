@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="16dp"
@@ -7,19 +8,46 @@
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
     android:gravity="center_vertical"
-    android:background="?attr/selectableItemBackground">
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatar"
-        android:layout_width="@dimen/list_item_avatar_size"
-        android:layout_height="@dimen/list_item_avatar_size"
-        android:layout_marginRight="16dp"/>
 
     <TextView
-        android:id="@android:id/text1"
+        tools:ignore="ContentDescription"
+        android:id="@+id/btnWhereBuy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Is something!"/>
+        android:text="@string/title_where_buy"
+        android:drawableStart="@drawable/ic_time_to_leave_black_24dp"
+        android:drawablePadding="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"/>
+
+    <TextView
+        tools:ignore="UselessParent"
+        android:id="@+id/btnSendMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_send_message"
+        android:drawableStart="@drawable/ic_send_black_24dp"
+        android:drawablePadding="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"/>
+
+    <TextView
+        tools:ignore="UselessParent"
+        android:id="@+id/btnActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_actions"
+        android:drawableStart="@drawable/ic_card_giftcard_black_24dp"
+        android:drawablePadding="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="36dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"/>
+
 
 </LinearLayout>
 

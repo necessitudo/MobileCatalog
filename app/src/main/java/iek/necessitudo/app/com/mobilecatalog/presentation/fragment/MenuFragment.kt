@@ -1,7 +1,6 @@
-package iek.necessitudo.app.com.mobilecatalog.presentation
+package iek.necessitudo.app.com.mobilecatalog.presentation.fragment
 
 import android.os.Bundle
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package iek.necessitudo.app.com.mobilecatalog.presentation
+package iek.necessitudo.app.com.mobilecatalog.presentation.fragment
 
 import android.app.Dialog
 import android.os.Bundle
@@ -11,7 +11,7 @@ import iek.necessitudo.app.com.mobilecatalog.R
  * theme which sets a rounded background to the dialog
  * and doesn't dim the navigation bar
  */
-open class RoundedBottomSheetDialogFragment : BottomSheetDialogFragment() {
+abstract class RoundedBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun getTheme(): Int = R.style.BottomSheetDialogTheme
 

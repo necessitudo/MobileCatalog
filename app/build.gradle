@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+//apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -30,12 +32,17 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$appcompat_design_version"
     implementation "com.android.support:design:$appcompat_design_version"
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
-
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
+
+    implementation "com.arello-mobile:moxy:$moxy_version"
+    implementation "com.arello-mobile:moxy-compiler:$moxy_version"
+    implementation "com.arello-mobile:moxy-app-compat:$moxy_version"
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

@@ -4,15 +4,27 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.util.Base64
+import com.arellomobile.mvp.MvpAppCompatActivity
+import com.arellomobile.mvp.presenter.InjectPresenter
 import iek.necessitudo.app.com.mobilecatalog.R
 import iek.necessitudo.app.com.mobilecatalog.data.Repository
 import iek.necessitudo.app.com.mobilecatalog.data.rest.Model
 import iek.necessitudo.app.com.mobilecatalog.data.rest.RestClient
 import iek.necessitudo.app.com.mobilecatalog.presentation.fragment.MenuFragment
+import iek.necessitudo.app.com.mobilecatalog.presentation.mvp.MainPresenter
+import iek.necessitudo.app.com.mobilecatalog.presentation.mvp.MainView
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MvpAppCompatActivity(),MainView {
+
+    override fun testClick() {
+       mPresenter.testClick()
+
+    }
+
+    @InjectPresenter
+    lateinit var mPresenter : MainPresenter
 
    val apiService by lazy {
         RestClient.create()
@@ -39,8 +51,8 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_search -> {
                 //message.setText(R.string.title_notifications)
 
-                getGroupDDP()
-
+                //getGroupDDP()
+                testClick()
                 return@OnNavigationItemSelectedListener true
             }
         }

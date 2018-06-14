@@ -1,4 +1,4 @@
-package iek.necessitudo.app.com.mobilecatalog.presentation
+package iek.necessitudo.app.com.mobilecatalog.presentation.common
 
 import android.annotation.SuppressLint
 import android.support.design.internal.BottomNavigationItemView

@@ -1,4 +1,4 @@
-package iek.necessitudo.app.com.mobilecatalog.presentation.fragment
+package iek.necessitudo.app.com.mobilecatalog.presentation.common
 
 import android.app.Dialog
 import android.os.Bundle

@@ -12,5 +12,5 @@ libs/
 src/main/java/iek/necessitudo/app/com/mobilecatalog/di/
 src/main/java/iek/necessitudo/app/com/mobilecatalog/domain/
 src/main/java/iek/necessitudo/app/com/mobilecatalog/presentation/activity/
-src/main/java/iek/necessitudo/app/com/mobilecatalog/data/Authentification.kt
+Authentification.kt
 

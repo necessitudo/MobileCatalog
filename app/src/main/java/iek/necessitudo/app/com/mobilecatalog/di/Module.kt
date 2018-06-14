@@ -10,7 +10,8 @@ class ManagerModule {
 
     @Singleton
     @Provides
-     fun provideFragmentManager() : AppFragmentManager {return AppFragmentManager()}
+     fun provideFragmentManager() : AppFragmentManager {return AppFragmentManager()
+    }
 
 
 }

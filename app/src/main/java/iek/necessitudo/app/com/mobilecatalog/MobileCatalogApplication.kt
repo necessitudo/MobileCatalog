@@ -5,7 +5,7 @@ import iek.necessitudo.app.com.mobilecatalog.di.AppComponent
 import iek.necessitudo.app.com.mobilecatalog.di.DaggerAppComponent
 import iek.necessitudo.app.com.mobilecatalog.di.ManagerModule
 
-class MyApplication : Application() {
+class MobileCatalogApplication : Application() {
 
     companion object {
         lateinit var graph : AppComponent

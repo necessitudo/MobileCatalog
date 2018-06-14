@@ -2,21 +2,21 @@ package iek.necessitudo.app.com.mobilecatalog.presentation
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
 import android.util.Base64
-import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import iek.necessitudo.app.com.mobilecatalog.R
 import iek.necessitudo.app.com.mobilecatalog.data.Repository
 import iek.necessitudo.app.com.mobilecatalog.data.rest.Model
 import iek.necessitudo.app.com.mobilecatalog.data.rest.RestClient
-import iek.necessitudo.app.com.mobilecatalog.presentation.fragment.MenuFragment
+import iek.necessitudo.app.com.mobilecatalog.presentation.activity.BaseActivity
+import iek.necessitudo.app.com.mobilecatalog.presentation.common.BottomNavigationViewHelper
+import iek.necessitudo.app.com.mobilecatalog.presentation.common.MenuFragment
 import iek.necessitudo.app.com.mobilecatalog.presentation.mvp.MainPresenter
 import iek.necessitudo.app.com.mobilecatalog.presentation.mvp.MainView
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : MvpAppCompatActivity(),MainView {
+class MainActivity : BaseActivity(),MainView {
 
     override fun testClick() {
        mPresenter.testClick()
@@ -52,7 +52,8 @@ class MainActivity : MvpAppCompatActivity(),MainView {
                 //message.setText(R.string.title_notifications)
 
                 //getGroupDDP()
-                testClick()
+                //testClick()
+
                 return@OnNavigationItemSelectedListener true
             }
         }

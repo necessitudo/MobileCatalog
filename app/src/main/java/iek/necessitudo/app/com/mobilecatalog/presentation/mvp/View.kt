@@ -7,3 +7,5 @@ interface MainView:MvpView{
     fun testClick(){}
 
 }
+
+interface FragmentView:MvpView{}

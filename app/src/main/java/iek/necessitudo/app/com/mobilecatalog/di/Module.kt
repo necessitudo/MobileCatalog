@@ -2,7 +2,7 @@ package iek.necessitudo.app.com.mobilecatalog.di
 
 import dagger.Module
 import dagger.Provides
-import iek.necessitudo.app.com.mobilecatalog.presentation.fragment.AppFragmentManager
+import iek.necessitudo.app.com.mobilecatalog.presentation.common.AppFragmentManager
 import javax.inject.Singleton
 
 @Module

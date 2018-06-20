@@ -11,12 +11,17 @@ import iek.necessitudo.app.com.mobilecatalog.data.rest.RestClient
 import iek.necessitudo.app.com.mobilecatalog.presentation.activity.BaseActivity
 import iek.necessitudo.app.com.mobilecatalog.presentation.common.BottomNavigationViewHelper
 import iek.necessitudo.app.com.mobilecatalog.presentation.common.MenuFragment
+import iek.necessitudo.app.com.mobilecatalog.presentation.fragment.BaseFragment
+import iek.necessitudo.app.com.mobilecatalog.presentation.fragment.CatalogFragment
+import iek.necessitudo.app.com.mobilecatalog.presentation.fragment.FavoritesFragment
 import iek.necessitudo.app.com.mobilecatalog.presentation.mvp.MainPresenter
 import iek.necessitudo.app.com.mobilecatalog.presentation.mvp.MainView
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(),MainView {
+
+    val BACK_STACK_ROOT_TAG = "root_fragment"
 
     override fun testClick() {
        mPresenter.testClick()
@@ -46,6 +51,9 @@ class MainActivity : BaseActivity(),MainView {
             }
             R.id.navigation_notifications -> {
                 //message.setText(R.string.title_notifications)
+                //addContent(FavoritesFragment())
+               setContent(FavoritesFragment())
+               //testFragmentTransaction(FavoritesFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_search -> {
@@ -53,6 +61,9 @@ class MainActivity : BaseActivity(),MainView {
 
                 //getGroupDDP()
                 //testClick()
+
+                setContent(CatalogFragment())
+                //testFragmentTransaction(CatalogFragment())
 
                 return@OnNavigationItemSelectedListener true
             }
@@ -62,7 +73,6 @@ class MainActivity : BaseActivity(),MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         BottomNavigationViewHelper.disableShiftMode(navigation)
@@ -85,6 +95,16 @@ class MainActivity : BaseActivity(),MainView {
 
 
         val a = 2*/
+    }
+
+    fun testFragmentTransaction(fragment: BaseFragment){
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragmentPlace, fragment)
+                .addToBackStack(BACK_STACK_ROOT_TAG)
+                .commit();
+
     }
 
     fun resultSuccess(result: List<Model.GroupDDP>){

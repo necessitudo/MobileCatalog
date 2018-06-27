@@ -2,20 +2,20 @@ package iek.necessitudo.app.com.mobilecatalog.presentation.mvp
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import com.arellomobile.mvp.presenter.InjectPresenter
+import javax.inject.Inject
 
 @InjectViewState
-class MainPresenter: MvpPresenter<MainView>() {
+class CatalogPresenter: MvpPresenter<FragmentView>() {
 
 
-    init {
-        //MobileCatalogApplication.graph.inject(this)
-    }
 
-    fun testClick(){
+fun loadStart(){
 
-        val a = 0
-    }
 
+
+
+}
 
 
 }

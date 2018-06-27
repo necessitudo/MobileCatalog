@@ -1,16 +1,15 @@
 package iek.necessitudo.app.com.mobilecatalog.data
 
 import android.content.Context
-import android.graphics.ColorSpace
 import android.util.Base64
+import android.util.Log
 import android.widget.Toast
-import iek.necessitudo.app.com.mobilecatalog.data.rest.Model
 import iek.necessitudo.app.com.mobilecatalog.data.rest.RestClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class Repository(val context: Context) {
+class Repository() {
 
     val apiService by lazy {
         RestClient.create()
@@ -26,19 +25,17 @@ class Repository(val context: Context) {
                        .observeOn(AndroidSchedulers.mainThread())
                        .subscribe(
                                { result -> showSuccess(result) },
-                               { error -> Toast.makeText(context, error.message, Toast.LENGTH_LONG).show() }
+                               { error -> showError(error) }
                        )
 
         return true
 
    }
 
-    fun showSuccess(result: List<Model.GroupDDP>){
-        val a = 0
+    fun showSuccess(result: List<GroupDDP>){
     }
 
     fun showError(result:Throwable){
-        val a=0
     }
 
 

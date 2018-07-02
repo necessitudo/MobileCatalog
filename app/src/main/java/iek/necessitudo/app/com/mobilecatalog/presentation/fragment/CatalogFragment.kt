@@ -15,11 +15,18 @@ class CatalogFragment :BaseFragment() , FragmentView{
 
     lateinit var adapter: CatalogAdapter
 
+    @InjectPresenter
+    lateinit var presenter: CatalogPresenter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setUpRecyclerView()
         setUpAdapter()
+
+        presenter.loadStart()
+
+
 
 
     }
@@ -38,7 +45,7 @@ class CatalogFragment :BaseFragment() , FragmentView{
         rv_list.adapter = adapter
 
     }
-    override fun getMainContentLayout(): Int { return R.layout.catalog_fragment}
+    override fun getMainContentLayout(): Int { return R.layout.list_fragment}
 
 
     override fun addItems(items: List<GroupDDP>) {

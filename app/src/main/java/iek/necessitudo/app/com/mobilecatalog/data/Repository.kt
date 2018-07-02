@@ -4,10 +4,13 @@ import android.content.Context
 import android.util.Base64
 import android.util.Log
 import android.widget.Toast
+import iek.necessitudo.app.com.mobilecatalog.data.model.GroupDDP
 import iek.necessitudo.app.com.mobilecatalog.data.rest.RestClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.experimental.async
+import kotlinx.coroutines.experimental.launch
 
 class Repository() {
 
@@ -15,9 +18,38 @@ class Repository() {
         RestClient.create()
     }
 
-    var disposable: Disposable? = null
 
-   fun getAllGroupDDP(): Boolean{
+    fun getAllGroupDDP():Result{
+
+        var result = Result()
+
+
+        async {
+
+            try {
+
+                val data = apiService.getGroupsDDP(getAuthToken())
+                val responce = data.await()
+                result.status = "success"
+                result.data = responce
+
+
+            } catch (exception:Exception){
+                result.status = "error"
+
+            }
+
+        }
+
+        return result
+
+    }
+
+
+
+    //var disposable: Disposable? = null
+
+   /*fun getAllGroupDDP(): Boolean{
 
        disposable =
                apiService.getGroupsDDP(getAuthToken())
@@ -30,7 +62,7 @@ class Repository() {
 
         return true
 
-   }
+   }*/
 
     fun showSuccess(result: List<GroupDDP>){
     }
@@ -51,4 +83,17 @@ class Repository() {
     }
 
 
+    suspend fun loadAllGroupDDP(){
+
+        val all = apiService.getGroupsDDP(getAuthToken()).await()
+
+    }
+
+
+}
+
+class  Result{
+
+    lateinit var status:String
+    lateinit var data:List<GroupDDP>
 }

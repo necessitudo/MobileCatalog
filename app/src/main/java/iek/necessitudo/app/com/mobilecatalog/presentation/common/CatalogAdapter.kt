@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import iek.necessitudo.app.com.mobilecatalog.R
 import android.view.View
 import android.view.ViewGroup
-import iek.necessitudo.app.com.mobilecatalog.presentation.GroupDDP
+import iek.necessitudo.app.com.mobilecatalog.presentation.model.GroupDDP
 
 
 class CatalogAdapter() : ListAdapter<GroupDDP, GroupDDPViewHolder>(GroupDDPDiffCallback()){
